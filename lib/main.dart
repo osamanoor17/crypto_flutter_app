@@ -1,6 +1,9 @@
 // lib/main.dart
-import 'package:crypto_flutter_app/screens/crypto_lists.dart';
+
 import 'package:flutter/material.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
+
+import 'views/splash/splash_screen.dart';
 
 void main() {
   runApp(const CryptoApp());
@@ -11,13 +14,13 @@ class CryptoApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Crypto Prices',
+      title: 'Coinfinity',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const CryptoListScreen(),
+      home: const SplashScreen(),
     );
   }
 }

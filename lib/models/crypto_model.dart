@@ -1,40 +1,57 @@
 class Crypto {
-  final String id;
-  final String name;
-  final String image;
-  final String symbol;
-  final double currentPrice;
-  final double priceChange24h;
-  final double high24h;
-  final double low24h;
-  final double marketCap;
-  final double priceChangePercentage24h;
+  String id;
+  String symbol;
+  String name;
+  String image;
+  int currentPrice;
+  int marketCap;
+  int marketCapRank;
+  int fullyDilutedValuation;
+  int totalVolume;
+  int high24H;
+  int low24H;
+  double priceChange24H;
+  double priceChangePercentage24H;
+  int marketCapChange24H;
+  double marketCapChangePercentage24H;
+  int circulatingSupply;
+  int totalSupply;
+  int maxSupply;
+  int ath;
+  double athChangePercentage;
+  DateTime athDate;
+  double atl;
+  double atlChangePercentage;
+  DateTime atlDate;
+  dynamic roi;
+  DateTime lastUpdated;
 
   Crypto({
     required this.id,
-    required this.name,
     required this.symbol,
-    required this.currentPrice,
+    required this.name,
     required this.image,
-    required this.priceChange24h,
-    required this.high24h,
-    required this.low24h,
+    required this.currentPrice,
     required this.marketCap,
-    required this.priceChangePercentage24h,
+    required this.marketCapRank,
+    required this.fullyDilutedValuation,
+    required this.totalVolume,
+    required this.high24H,
+    required this.low24H,
+    required this.priceChange24H,
+    required this.priceChangePercentage24H,
+    required this.marketCapChange24H,
+    required this.marketCapChangePercentage24H,
+    required this.circulatingSupply,
+    required this.totalSupply,
+    required this.maxSupply,
+    required this.ath,
+    required this.athChangePercentage,
+    required this.athDate,
+    required this.atl,
+    required this.atlChangePercentage,
+    required this.atlDate,
+    required this.roi,
+    required this.lastUpdated,
   });
-
-  factory Crypto.fromJson(Map<String, dynamic> json) {
-    return Crypto(
-      id: json['id'],
-      name: json['name'],
-      symbol: json['symbol'],
-      currentPrice: json['current_price']?.toDouble() ?? 0.0,
-      image: json['image'],
-      priceChange24h: json['price_change_24h']?.toDouble() ?? 0.0,
-      high24h: json['high_24h']?.toDouble() ?? 0.0,
-      low24h: json['low_24h']?.toDouble() ?? 0.0,
-      marketCap: json['market_cap']?.toDouble() ?? 0.0,
-      priceChangePercentage24h: json['price_change_percentage_24h']?.toDouble() ?? 0.0,
-    );
-  }
 }
